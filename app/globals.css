@@ -3,6 +3,8 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary: #3895d3;
+  --secondary: #fc9700;
 }
 
 @theme inline {
@@ -16,6 +18,8 @@
   :root {
     --background: #0a0a0a;
     --foreground: #ededed;
+    --primary: #3895d3;
+    --secondary: #fc9700;
   }
 }
 
@@ -25,22 +29,22 @@
   box-sizing: border-box;
 }
 
-/* body {
+body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-} */
+  font-family: jost, Arial, Helvetica, sans-serif;
+}
 
-.signin {
+/* .signin {
   display: flex;
   justify-content: center;
   margin: auto;
   width: 100%;
   height: 100vh;
   background-color: #171717;
-}
+} */
 
-.signin__box {
+/* .signin__box {
   display: flex;
   align-self: center;
   width: 60%;
@@ -48,21 +52,77 @@
   background-color: white;
   border-radius: 8px;
   overflow: hidden;
-}
-
-.signin__box__slide{
-width: 100%;
-height: 100%;
-background-color: blueviolet;
-}
-
-.signin__box__info{
-width: 100%;
-height: 100%;
-
-}
-
-/* .signin__box__similar{
-  width: 100%;
-  height: 100%;
 } */
+
+.scapesvgBg {
+  @apply absolute w-full top-0 lg:top-[-40%] left-0;
+}
+
+.svgBg {
+  @apply absolute flex w-full scale-[4] lg:scale-[1] origin-[0%_100%] bottom-0 left-0;
+}
+
+.button {
+  @apply w-full rounded-[4px] text-white p-2 flex justify-center my-2;
+}
+
+.gradientBg {
+  @apply absolute top-0 left-0 w-full h-[100vh] opacity-40 bg-gradient-to-tl from-blue-700 to-red-400;
+}
+
+.input {
+  @apply flex items-center w-full p-1 rounded-[4px] outline-[1px] outline-zinc-400;
+}
+
+.signin {
+  @apply relative flex justify-center text-black m-[auto] w-full h-[100vh] bg-[#171717] overflow-hidden;
+}
+
+.signin__box {
+  @apply relative flex self-center w-[90%] md:w-[60%] h-[auto] lg:h-[80vh] py-[2em] lg:py-0 bg-white rounded-[8px] overflow-hidden;
+}
+
+.signin__box__slide {
+  @apply w-full h-full hidden lg:flex bg-zinc-600 overflow-hidden;
+}
+
+.signin__box__info {
+  @apply flex items-center w-full h-full;
+}
+
+.signin__box__info__guide {
+  @apply flex flex-col gap-2 text-[16px] lg:text-[13px] justify-center self-center w-full px-[1em];
+}
+
+.slide__item {
+  @apply relative w-full h-full overflow-hidden;
+}
+
+.slide__item__bg {
+  @apply absolute top-0 left-0 w-full h-full;
+}
+
+.slide__item__text {
+  @apply relative flex p-[3em] text-white justify-center items-center w-full h-full;
+}
+
+.slide__item__text__outline {
+  @apply flex flex-col p-2 border-[1px] border-white rounded-[12px];
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #5c5d5e; /* slate-300 */
+  opacity: 0.7;
+  transition: all 0.3s ease;
+  border-radius: 50%; /* Make bullets perfectly round */
+  cursor: pointer; /* Indicate it's clickable */
+}
+
+.swiper-pagination-bullet-active {
+  background: #ffffff; /* blue-800 */
+  opacity: 1;
+  width: 25px; /* Make active bullet wider */
+  border-radius: 0.5rem; /* Rounded rectangle for active bullet */
+}
