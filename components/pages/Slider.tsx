@@ -4,14 +4,10 @@ import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // // import Swiper core and required modules
-import { Autoplay, Navigation, Pagination, Scrollbar } from "swiper/modules";
-
-// // Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import { Autoplay, Pagination } from "swiper/modules";
 import { slide } from "@/constant";
+
+import "swiper/css";
 
 interface props {
   id: string;
@@ -35,12 +31,29 @@ const SlideItem: React.FC<props> = ({
       <div
         style={{
           backgroundImage: `url(${image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
         }}
         className="slide__item__bg"
       ></div>
+      <div className="slide__item__opacity"></div>
       <div className="slide__item__text">
         <div className="slide__item__text__outline">
           <p className="font-[700] text-3xl">{title}</p>
+          {!bodyList && <p className="text-md">{body}</p>}
+          {bodyList && (
+            <ul className="text-md flex flex-col gap-2">
+              {bodyListItems?.map((item, index) => (
+                <li key={index} className="flex flex-col gap-[2px]">
+                  <span>{item}</span>
+                  {index * 1 != bodyListItems.length - 1 && (
+                    <hr className="w-full h-[1px] border-[0px] bg-white" />
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </div>
     </div>
@@ -57,7 +70,7 @@ export const Slider = () => {
       speed={800}
       slideToClickedSlide={true}
       pagination={{
-        // el: ".swiper-pagination",
+        el: ".swiper-pagination",
         clickable: true,
       }}
       autoplay={{
@@ -79,6 +92,7 @@ export const Slider = () => {
           />
         </SwiperSlide>
       ))}
+      <div className="swiper-pagination"></div>
     </Swiper>
   );
 };

@@ -63,15 +63,94 @@ body {
 }
 
 .button {
-  @apply w-full rounded-[4px] text-white p-2 flex justify-center my-2;
+  @apply rounded-[4px] text-white flex justify-center cursor-pointer;
+}
+
+.button__inline {
+  @apply px-3 py-1 items-center font-bold hover:bg-[var(--secondary)];
+}
+
+.button__full {
+  @apply p-2 w-full my-2;
+}
+
+.button__search {
+  @apply flex flex-col justify-end cursor-pointer;
+}
+
+.deskMenu {
+  @apply hidden lg:flex;
+}
+
+.dropdown {
+  @apply relative flex flex-col;
+}
+
+.dropdown__button {
+  @apply relative border border-zinc-300 p-1 flex justify-between items-center gap-12 cursor-pointer;
+}
+
+.dropdown__collapse {
+  @apply absolute w-full bg-white top-[2em] left-0;
+}
+
+.dropdown__collapse__items {
+  @apply flex w-full px-2 py-1 justify-start bg-white hover:bg-zinc-200;
 }
 
 .gradientBg {
   @apply absolute top-0 left-0 w-full h-[100vh] opacity-40 bg-gradient-to-tl from-blue-700 to-red-400;
 }
 
+.hamburger {
+  @apply flex lg:hidden h-[2px] self-start bg-[var(--secondary)];
+}
+
+.header {
+  @apply flex relative py-4 text-[14px] justify-between lg:justify-start w-full;
+}
+
+.home {
+  @apply relative flex flex-col w-full;
+}
+
 .input {
   @apply flex items-center w-full p-1 rounded-[4px] outline-[1px] outline-zinc-400;
+}
+
+.modal {
+  @apply fixed inset-0 bg-black flex justify-start p-4 z-50 overflow-y-auto;
+}
+
+.modal__container{
+  @apply relative bg-white rounded-xl shadow-2xl p-6 sm:p-8 w-[80%] md:w-[40%] opacity-100 overflow-y-auto max-h-[30vh];
+}
+
+.modal__content{
+  @apply flex flex-col w-full text-black text-[1.2em] px-3 pt-[2em] gap-4;
+}
+.search__trip {
+  @apply flex gap-4 mt-12 w-full;
+}
+
+.search__trip__input {
+  @apply flex items-center gap-1;
+}
+
+.section__main {
+  @apply relative flex flex-col text-[14px] w-full p-4 bg-[url(/images/marine.jpg)] bg-cover bg-no-repeat;
+}
+
+.section__main__search {
+  @apply relative p-4 w-full mt-[20%] md:mt-[12%] lg:mt-[8%] text-black rounded-[6px] bg-white;
+}
+
+.section__main__search__menu {
+  @apply flex justify-center gap-[5em] shadow-lg shadow-gray-400/30 px-4 py-3 bg-white absolute top-[-4em] left-0 md:left-[20%] lg:left-[30%] w-[100%] md:w-[60%] lg:w-[40%] rounded-[6px];
+}
+
+.separator {
+  @apply items-center justify-center rotate-90 text-white origin-[50_50];
 }
 
 .signin {
@@ -106,23 +185,38 @@ body {
   @apply relative flex p-[3em] text-white justify-center items-center w-full h-full;
 }
 
+.slide__item__opacity {
+  @apply absolute left-0 top-0 bg-black opacity-[0.3] w-full h-full;
+}
+
 .slide__item__text__outline {
-  @apply flex flex-col p-2 border-[1px] border-white rounded-[12px];
+  @apply flex flex-col gap-6 px-4 py-6 border-[1px] border-white rounded-[12px];
+}
+
+.swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
 }
 
 .swiper-pagination-bullet {
   width: 10px;
   height: 10px;
-  background: #5c5d5e; /* slate-300 */
+  background: #7c7d7d;
   opacity: 0.7;
   transition: all 0.3s ease;
-  border-radius: 50%; /* Make bullets perfectly round */
-  cursor: pointer; /* Indicate it's clickable */
+  border-radius: 50%;
+  cursor: pointer;
 }
 
 .swiper-pagination-bullet-active {
-  background: #ffffff; /* blue-800 */
+  background: white;
   opacity: 1;
-  width: 25px; /* Make active bullet wider */
-  border-radius: 0.5rem; /* Rounded rectangle for active bullet */
+  width: 25px;
+  border-radius: 0.5rem;
 }

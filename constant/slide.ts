@@ -7,11 +7,8 @@ export const slide = [
     bodyList: true,
     bodyListItems: [
       "Faster Bookings",
-      ,
       "Secured Verification",
-      ,
       "Personalised Offers",
-      ,
     ],
   },
   {
