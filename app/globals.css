@@ -122,19 +122,48 @@ body {
   @apply fixed inset-0 bg-black flex justify-start p-4 z-50 overflow-y-auto;
 }
 
-.modal__container{
+.modal__container {
   @apply relative bg-white rounded-xl shadow-2xl p-6 sm:p-8 w-[80%] md:w-[40%] opacity-100 overflow-y-auto max-h-[30vh];
 }
 
-.modal__content{
+.modal__content {
   @apply flex flex-col w-full text-black text-[1.2em] px-3 pt-[2em] gap-4;
 }
+
+.search__select{
+  @apply flex flex-col lg:flex-row border border-zinc-400 rounded-[6px] w-full
+}
+
+.search__select__city{
+  @apply flex w-full lg:w-[50%];
+}
+
+.search__select__guide{
+  @apply flex w-full lg:w-[25%];
+}
+
+.search__select__item{
+  @apply relative flex flex-col p-4 border-r border-b-1 lg:border-b-0 border-zinc-400 w-full cursor-pointer;
+}
+
+.search__select__item__dropdown{
+  @apply absolute z-[10] top-[110%] h-[200px] rounded shadow-lg shadow-gray-400 flex flex-col p-4 border border-zinc-400 bg-white cursor-pointer;
+}
+
 .search__trip {
-  @apply flex gap-4 mt-12 w-full;
+  @apply flex flex-col gap-4 mt-12 w-full;
 }
 
 .search__trip__input {
   @apply flex items-center gap-1;
+}
+
+.search__trip__menu {
+  @apply flex justify-between w-full;
+}
+
+.search__trip__select {
+  @apply flex gap-4 items-center w-full md:w-[50%];
 }
 
 .section__main {

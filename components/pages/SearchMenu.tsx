@@ -19,6 +19,9 @@ const Menu: React.FC<menuProps> = ({ id, title, icon, active, link }) => {
   return (
     <button
       className="button__search"
+      onClick={() => {
+        console.log("menu clicked!!");
+      }}
       onMouseOver={() => {
         setFill("#3895d3");
         setStroke("#3895d3");
