@@ -9,12 +9,12 @@ interface menuProps {
   id: string;
   title: string;
   icon: (width: string, fill: string, stroke: string) => React.ReactElement;
-  active: boolean;
-  link: string;
+  active?: boolean;
+  link?: string;
   path: string;
 }
 
-const Menu: React.FC<menuProps> = ({ id, title, icon, active, link, path }) => {
+const Menu: React.FC<menuProps> = ({ id, title, icon, path }) => {
   const [hover, setHover] = useState(false);
 
   const isFlight = id == "0" && path == "/";

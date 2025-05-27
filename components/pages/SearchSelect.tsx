@@ -1,7 +1,7 @@
 "use client";
 
 import { useStore } from "@/store";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Flight2, Search } from "../svg";
 import axios from "axios";
 import { popularCities } from "@/constant/cities";

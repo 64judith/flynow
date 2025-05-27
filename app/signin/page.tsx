@@ -23,10 +23,13 @@ const page = () => {
               <label htmlFor="email">Email Address</label>
               <Input id="email" placeholder={"Enter your email address"} />
             </div>
-            <Button full secondary>continue</Button>
+
+            <Button full secondary>
+              continue
+            </Button>
             <p className="text-center">
               By signing in or registering, I confirm that I have read and
-              agreed to Flynow's{" "}
+              agreed to Flynow&apos;s{" "}
               <span className="text-[var(--primary)]">
                 Terms and Conditions
               </span>{" "}

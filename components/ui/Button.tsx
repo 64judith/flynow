@@ -3,7 +3,7 @@ import React from "react";
 interface props {
   children: React.ReactNode;
   type?: string;
-  onClick: () => void;
+  onClick?: () => void;
   className?: string;
   full?: boolean;
   primary?: boolean;
@@ -13,8 +13,6 @@ interface props {
 export const Button: React.FC<props> = ({
   children,
   onClick,
-  type,
-  className,
   full,
   primary,
   secondary,

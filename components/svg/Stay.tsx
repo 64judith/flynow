@@ -2,11 +2,10 @@ import React from "react";
 
 interface props {
   width: string;
-  fill: string;
   stroke: string;
 }
 
-export const Stay: React.FC<props> = ({ width, fill, stroke }) => {
+export const Stay: React.FC<props> = ({ width, stroke }) => {
   return (
     <svg viewBox="0 0 24 24" fill="none" width={width}>
       <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
