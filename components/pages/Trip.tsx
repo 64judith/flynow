@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { Seat } from "../svg";
 import { Dropdown } from "../ui";
@@ -26,6 +28,7 @@ export const Trip = () => {
       </div>
 
       <SearchSelect />
+      <button className="search__trip__btn">Search</button>
     </div>
   );
 };

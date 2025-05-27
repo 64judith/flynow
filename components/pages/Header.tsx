@@ -42,7 +42,9 @@ export const Header = () => {
       <span className="deskMenu separator">- - - - - -</span>
 
       <span className="flex items-center justify-center">
-        <Button primary>Login or Create Account</Button>
+        <Button onClick={() => router.push("/signin")} primary>
+          Login or Create Account
+        </Button>
       </span>
 
       <Modal isOpen={isModalOpen} onClose={closeModal}>

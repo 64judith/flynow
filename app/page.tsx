@@ -1,8 +1,7 @@
 "use client";
 
-import { CityInfo, Header, SearchMenu, Trip } from "@/components/pages";
+import { Header, SearchMenu, SlideInfo, Trip } from "@/components/pages";
 import { useStore } from "@/store";
-import Image from "next/image";
 
 export default function Home() {
   const { setTripClickedID } = useStore();
@@ -20,11 +19,12 @@ export default function Home() {
         <div className="section__main__search">
           <SearchMenu />
           <Trip />
-          <CityInfo />
         </div>
       </div>
 
-      <div className="section__slide"></div>
+      <div className="section__slide">
+        <SlideInfo />
+      </div>
     </div>
   );
 }

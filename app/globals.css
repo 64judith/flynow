@@ -24,9 +24,9 @@
 }
 
 * {
+  box-sizing: border-box;
   margin: 0px;
   padding: 0px;
-  box-sizing: border-box;
 }
 
 body {
@@ -91,7 +91,7 @@ body {
 }
 
 .dropdown__collapse {
-  @apply absolute w-full bg-white top-[2em] left-0;
+  @apply absolute z-[15] w-full bg-white top-[2em] left-0;
 }
 
 .dropdown__collapse__items {
@@ -131,7 +131,7 @@ body {
 }
 
 .search__select{
-  @apply flex flex-col lg:flex-row border border-zinc-400 rounded-[6px] w-full
+  @apply flex flex-col lg:flex-row mb-[4em] border border-zinc-400 rounded-[6px] w-full
 }
 
 .search__select__city{
@@ -147,11 +147,42 @@ body {
 }
 
 .search__select__item__dropdown{
-  @apply absolute z-[10] top-[110%] h-[200px] rounded shadow-lg shadow-gray-400 flex flex-col p-4 border border-zinc-400 bg-white cursor-pointer;
+  @apply absolute z-[10] top-[110%] h-[200px] rounded shadow-lg shadow-gray-400 flex flex-col p-2 border border-zinc-400 bg-white cursor-pointer;
+}
+
+.search__select__item__input{
+  @apply flex p-1 gap-1 rounded border border-zinc-400
+}
+
+.search__select__item__btn{
+  @apply flex justify-between hover:bg-zinc-200 p-1;
+}
+
+.search__select__item__guide{
+  @apply flex flex-col gap-2 overflow-y-auto py-2 ;
+}
+
+.search__select__item__popular__cities{
+  @apply flex flex-wrap justify-between;
+}
+.search__select__item__popular__cities__btn{
+  @apply w-1/4 lg:w-1/5 px-2 hover:bg-zinc-300 py-1 m-1;
+}
+
+.search__select__passenger{
+  @apply flex flex-wrap justify-between mt-4 w-full;
+}
+
+.search__select__passenger__item{
+  @apply border border-zinc-300 text-xl p-2 w-1/5 hover:bg-[var(--primary)] cursor-pointer;
 }
 
 .search__trip {
-  @apply flex flex-col gap-4 mt-12 w-full;
+  @apply relative flex flex-col gap-4 mt-12 w-full;
+}
+
+.search__trip__btn{
+  @apply absolute cursor-pointer bg-[var(--secondary)] hover:bg-[var(--primary)] text-white text-3xl font-bold rounded-[10px] p-2 px-[4px] w-[50%] lg:w-[20%] top-[95%] left-[25%] lg:left-[40%];
 }
 
 .search__trip__input {
@@ -167,7 +198,7 @@ body {
 }
 
 .section__main {
-  @apply relative flex flex-col text-[14px] w-full p-4 bg-[url(/images/marine.jpg)] bg-cover bg-no-repeat;
+  @apply relative flex flex-col text-[14px] pb-[4em] w-full p-4 bg-[url(/images/marine.jpg)] bg-cover bg-no-repeat;
 }
 
 .section__main__search {
