@@ -210,7 +210,7 @@ body {
 }
 
 .separator {
-  @apply items-center justify-center rotate-90 text-white origin-[50_50];
+  @apply items-center justify-center rotate-90 text-white;
 }
 
 .signin {

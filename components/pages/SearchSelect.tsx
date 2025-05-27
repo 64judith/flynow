@@ -131,10 +131,10 @@ const Date: React.FC<dateProps> = ({ title, id, clicked, setClicked }) => {
 
 const City: React.FC<cityProps> = ({ title, id, clicked, setClicked }) => {
   const [hover, setHover] = useState(false);
-  const [selected, setSelected] = useState<{ [key: string]: string }>({
+  const [selected, setSelected] = useState<{ [key: string]: string | null }>({
     cityName: "Select City",
-    airportName: "",
-    iataCode: "",
+    airportName: null,
+    iataCode: null,
   });
   const [searchResult, setSearchResult] = useState<{ [key: string]: string }[]>(
     []
@@ -170,7 +170,7 @@ const City: React.FC<cityProps> = ({ title, id, clicked, setClicked }) => {
           color: `${hover ? "var(--primary)" : "black"}`,
         }}
       >
-        {`${selected.iataCode}, ${selected.airportName}`}
+        {selected.iataCode && `${selected.iataCode}, ${selected.airportName}`}
       </span>
 
       {clicked === id && (
